@@ -88,7 +88,6 @@ El núcleo de este proyecto es la implementación manual de las siguientes estru
     ```
     java -jar target/corpVentas.jar
     ```
-    *(El nombre del archivo puede variar según la versión en tu `pom.xml`)*
 
 ## ⚡ Uso Rápido
 
