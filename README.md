@@ -101,14 +101,42 @@ El núcleo de este proyecto es la implementación manual de las siguientes estru
 
 ## 🖼️ Capturas de Pantalla
 
-**Dashboard Principal:**
-![Dashboard Principal](ruta/a/tu/imagen_dashboard.png)
-
-**Módulo de Test de Rendimiento:**
-![Test de Rendimiento](ruta/a/tu/imagen_performance_test.png)
-
-**Calculadora de Expresiones:**
-![Calculadora](ruta/a/tu/imagen_calculadora.png)
+<table>
+  <tr>
+    <td align="center">
+      <img src="src/main/resources/img/dashboard.png" alt="Dashboard Principal" width="100%">
+      <br>
+      <sub><b>Dashboard Principal</b></sub>
+    </td>
+    <td align="center">
+      <img src="src/main/resources/img/operaciones-avanzadas.png" alt="Operaciones Avanzadas" width="100%">
+      <br>
+      <sub><b>Operaciones Avanzadas</b></sub>
+    </td>
+    <td align="center">
+      <img src="src/main/resources/img/ventas-regionales.png" alt="Ventas Regionales" width="100%">
+      <br>
+      <sub><b>Ventas Regionales</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="src/main/resources/img/cola-pedidos.png" alt="Cola de Pedidos" width="100%">
+      <br>
+      <sub><b>Cola de Pedidos</b></sub>
+    </td>
+    <td align="center">
+      <img src="src/main/resources/img/analisis-datos.png" alt="Análisis de Datos" width="100%">
+      <br>
+      <sub><b>Análisis de Datos</b></sub>
+    </td>
+    <td align="center">
+      <img src="src/main/resources/img/rendimiento.png" alt="Test de Rendimiento" width="100%">
+      <br>
+      <sub><b>Test de Rendimiento</b></sub>
+    </td>
+  </tr>
+</table>
 
 ## 🙏 Agradecimientos
 
