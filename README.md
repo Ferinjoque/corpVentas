@@ -64,7 +64,7 @@ El núcleo de este proyecto es la implementación manual de las siguientes estru
 * **Gestor de Proyectos:** Apache Maven
 * **Diseño de Vistas:** FXML y CSS
 
-##📋 Requisitos
+## 📋 Requisitos
 
 * JDK (Java Development Kit) 17 o superior.
 * Apache Maven 3.8 o superior.
