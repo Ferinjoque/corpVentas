@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.corpventas</groupId>
+    <artifactId>corp-ventas-fx</artifactId>
+    <version>2.0.0</version>
+
+    <properties>
+        <!-- Versión de Java a utilizar para compilar el código fuente. -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <!-- Codificación de caracteres del proyecto. -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Versión de JavaFX a utilizar, centralizada en una propiedad para fácil actualización. -->
+        <javafx.version>17.0.2</javafx.version>
+    </properties>
+
+    <!-- Dependencias: lista de librerías externas que el proyecto necesita. -->
+    <dependencies>
+        <!-- Dependencia para los controles de la interfaz de usuario de JavaFX (botones, tablas, etc.). -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+
+        <!-- Dependencia para poder cargar archivos FXML y vincularlos con los controladores. -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+
+        <!--
+         ~ Dependencias de Ikonli: una librería para agregar iconos a la aplicación JavaFX.
+        -->
+        <!-- Núcleo de la librería Ikonli para JavaFX. -->
+        <dependency>
+            <groupId>org.kordamp.ikonli</groupId>
+            <artifactId>ikonli-javafx</artifactId>
+            <version>12.3.1</version>
+        </dependency>
+        <!-- Dependencia base de Ikonli. -->
+        <dependency>
+            <groupId>org.kordamp.ikonli</groupId>
+            <artifactId>ikonli-core</artifactId>
+            <version>12.3.1</version>
+        </dependency>
+        <!-- Paquete específico de iconos (Material Design 2) utilizado en la aplicación. -->
+        <dependency>
+            <groupId>org.kordamp.ikonli</groupId>
+            <artifactId>ikonli-materialdesign2-pack</artifactId>
+            <version>12.3.1</version>
+        </dependency>
+    </dependencies>
+
+    <!-- Configuración de Construcción: define cómo se compila y empaqueta el proyecto. -->
+    <build>
+        <plugins>
+            <!-- Plugin para compilar el código Java. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Plugin de JavaFX: facilita la ejecución de la aplicación desde Maven. -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <executions>
+                    <execution>
+                        <!-- Configuración por defecto para la línea de comandos (ej. 'mvn javafx:run'). -->
+                        <id>default-cli</id>
+                        <configuration>
+                            <!-- Especifica la clase que contiene el método main para iniciar la aplicación. -->
+                            <mainClass>app.MainApp</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<StackPane fx:id="rootPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OperacionesAvanzadasController">
+    <BorderPane prefHeight="800.0" prefWidth="980.0" styleClass="view-container">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </padding>
+        <top>
+            <Label styleClass="view-title" text="Operaciones Avanzadas de Lista" BorderPane.alignment="CENTER_LEFT">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+                <BorderPane.margin>
+                    <Insets bottom="20.0" />
+                </BorderPane.margin>
+            </Label>
+        </top>
+        <center>
+            <VBox spacing="20.0">
+                <HBox spacing="20.0">
+                    <children>
+                        <VBox styleClass="form-container" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label styleClass="form-title" text="Operaciones Generales" />
+                                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                    <children>
+                                        <Label text="Operar sobre:" />
+                                        <ComboBox fx:id="cbAdvancedTarget" prefWidth="150.0" />
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="15.0" />
+                                    </VBox.margin>
+                                </HBox>
+                                <HBox spacing="10.0">
+                                    <children>
+                                        <Button fx:id="btnInvertir" onAction="#handleInvertir" styleClass="content-button" text="Invertir Lista">
+                                            <graphic>
+                                                <FontIcon iconLiteral="mdi2s-swap-vertical-bold" />
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="btnEliminarDuplicados" onAction="#handleEliminarDuplicados" styleClass="content-button" text="Eliminar Duplicados">
+                                            <graphic>
+                                                <FontIcon iconLiteral="mdi2c-content-duplicate" />
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="15.0" />
+                                    </VBox.margin>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <VBox styleClass="form-container" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label styleClass="form-title" text="Operaciones por Valor" />
+                                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                    <children>
+                                        <Label text="Valor:" />
+                                        <TextField fx:id="txtAdvancedValue" promptText="Ej: 1800.0" />
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="15.0" />
+                                    </VBox.margin>
+                                </HBox>
+                                <HBox spacing="10.0">
+                                    <children>
+                                        <Button fx:id="btnEliminarPorValor" onAction="#handleEliminarPorValor" styleClass="content-button, button-danger" text="Eliminar">
+                                            <graphic>
+                                                <FontIcon iconLiteral="mdi2d-delete-sweep-outline" />
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="btnBuscarMayorIgual" onAction="#handleBuscarMayorIgual" styleClass="content-button, button-primary" text="Buscar ≥">
+                                            <graphic>
+                                                <FontIcon iconLiteral="mdi2m-magnify-plus-outline" />
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets top="15.0" />
+                                    </VBox.margin>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <VBox VBox.vgrow="ALWAYS">
+                    <children>
+                        <Label fx:id="resultsLabel" styleClass="form-title" text="Estado Actual de la Lista" />
+
+                        <ScrollPane fx:id="scrollPane" fitToWidth="true" styleClass="form-container" VBox.vgrow="ALWAYS">
+                            <content>
+                                <FlowPane fx:id="listContainer" alignment="CENTER" hgap="10.0" vgap="10.0">
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                </FlowPane>
+                            </content>
+                            <VBox.margin>
+                                <Insets top="15.0" />
+                            </VBox.margin>
+                        </ScrollPane>
+                    </children>
+                </VBox>
+            </VBox>
+        </center>
+    </BorderPane>
+</StackPane>

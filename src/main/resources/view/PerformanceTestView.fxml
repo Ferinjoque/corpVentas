@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PerformanceTestController">
+    <BorderPane prefHeight="800.0" prefWidth="980.0" styleClass="view-container">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </padding>
+        <top>
+            <Label styleClass="view-title" text="Comparativa de Rendimiento de Estructuras" BorderPane.alignment="CENTER_LEFT">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+                <BorderPane.margin>
+                    <Insets bottom="20.0" />
+                </BorderPane.margin>
+            </Label>
+        </top>
+        <center>
+            <VBox spacing="20.0">
+                <children>
+                    <HBox alignment="CENTER_LEFT" spacing="15.0" styleClass="form-container">
+                        <padding>
+                            <Insets topRightBottomLeft="15" />
+                        </padding>
+                        <Label text="Seleccione la prueba:" />
+                        <ComboBox fx:id="cbOperaciones" prefWidth="350.0" />
+                        <Button fx:id="btnRunTest" onAction="#handleRunTest" styleClass="content-button, button-primary" text="Ejecutar Prueba" />
+                        <ProgressIndicator fx:id="progressIndicator" prefHeight="30.0" prefWidth="30.0" visible="false" />
+                    </HBox>
+                    <VBox styleClass="form-container" VBox.vgrow="ALWAYS">
+                        <children>
+                            <Label fx:id="resultsLabel" styleClass="form-title" text="Resultados (Tiempo en milisegundos)" />
+                            <BarChart fx:id="performanceChart" VBox.vgrow="ALWAYS" barGap="0.0" categoryGap="0.0">
+                                <xAxis>
+                                    <CategoryAxis label="Estructura de Datos" />
+                                </xAxis>
+                                <yAxis>
+                                    <NumberAxis label="Tiempo (ms)" />
+                                </yAxis>
+                            </BarChart>
+                        </children>
+                    </VBox>
+                </children>
+            </VBox>
+        </center>
+    </BorderPane>
+</StackPane>

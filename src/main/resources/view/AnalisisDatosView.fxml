@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AnalisisDatosController">
+    <BorderPane prefHeight="800.0" prefWidth="980.0" styleClass="view-container">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </padding>
+        <top>
+            <Label styleClass="view-title" text="Análisis de Datos con Árbol Binario" BorderPane.alignment="CENTER_LEFT">
+                <font>
+                    <Font name="System Bold" size="28.0" />
+                </font>
+                <BorderPane.margin>
+                    <Insets bottom="20.0" />
+                </BorderPane.margin>
+            </Label>
+        </top>
+        <center>
+            <VBox spacing="20.0">
+                <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="form-container">
+                    <padding>
+                        <Insets topRightBottomLeft="15" />
+                    </padding>
+                    <Button fx:id="btnGenerar" onAction="#handleGenerarArbol" styleClass="content-button, button-primary" text="1. Generar ABB de Ventas" />
+                    <Separator orientation="VERTICAL" />
+                    <Label text="Recorridos:" />
+                    <Button fx:id="btnInorden" onAction="#handleRecorridoInorden" styleClass="content-button" text="In-Orden" />
+                    <Button fx:id="btnPreorden" onAction="#handleRecorridoPreorden" styleClass="content-button" text="Pre-Orden" />
+                    <Button fx:id="btnPostorden" onAction="#handleRecorridoPostorden" styleClass="content-button" text="Post-Orden" />
+                    <Separator orientation="VERTICAL" />
+                    <Label text="Valor:" />
+                    <TextField fx:id="txtValor" prefWidth="100.0" promptText="Ej: 1800.0" />
+                    <Button fx:id="btnBuscar" onAction="#handleBuscar" styleClass="content-button" text="Buscar" />
+                    <Button fx:id="btnEliminar" onAction="#handleEliminar" styleClass="content-button, button-danger" text="Eliminar" />
+                </HBox>
+                <VBox styleClass="form-container" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Label styleClass="form-title" text="Visualización del Árbol">
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <ScrollPane fx:id="scrollPane" fitToWidth="true" VBox.vgrow="ALWAYS">
+                            <content>
+                                <Pane fx:id="canvas" />
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </VBox>
+                <VBox styleClass="form-container">
+                    <children>
+                        <Label styleClass="form-title" text="Resultados de Recorridos" />
+                        <TextArea fx:id="resultsArea" editable="false" prefHeight="120.0" promptText="Los resultados de los recorridos aparecerán aquí..." styleClass="results-area" wrapText="true" prefRowCount="3" minHeight="-Infinity" maxHeight="120.0">
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </TextArea>
+                    </children>
+                </VBox>
+            </VBox>
+        </center>
+    </BorderPane>
+</StackPane>
