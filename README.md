@@ -1,3 +1,14 @@
+> [!IMPORTANT]
+> # 🔬 Fundamentos CS: Estructuras de Datos y Algoritmos (2025)
+> 
+> ![Status](https://img.shields.io/badge/Estado-Archivado_(Completo)-success?style=flat-square) ![Topic](https://img.shields.io/badge/Enfoque-Algoritmos_y_Complejidad-critical?style=flat-square)
+>
+> **Este repositorio ha sido archivado tras su finalización académica en Julio de 2025.**
+>
+> Este proyecto no utiliza las colecciones estándar de Java (`java.util.*`). En su lugar, implementa **manualmente** estructuras de datos (Listas Enlazadas, Pilas, Colas, Árboles Binarios) para realizar un **benchmarking de rendimiento** y análisis de complejidad temporal (Big O) en escenarios reales.
+
+---
+
 # CorpVentas – Sistema de Gestión y Análisis de Ventas
 
 **Versión:** 4.0.0  
